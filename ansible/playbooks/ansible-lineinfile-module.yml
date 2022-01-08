@@ -1,0 +1,29 @@
+---
+- name: Install httpd server on all app servers and use lineinfile module to add more content to created file
+  hosts: all
+  become: true
+  tasks:
+  - name: Installing httpd server
+    package:
+      name: httpd
+      state: present
+
+  - name: Starting the httpd server
+    service: 
+      name: httpd
+      state: started
+
+  - name: Creating a new file index.html with content
+    copy:
+      dest: /var/www/html/index.html
+      owner: apache
+      group: apache
+      mode: 0655
+      content: | 
+        This is a Nautilus sample file, created using Ansible!
+
+  - name: Adding more content at the beginning of index file using lineinfile module
+    lineinfile:
+       dest: /var/www/html/index.html
+       line: Welcome to xFusionCorp Industries!
+       insertbefore: BOF
