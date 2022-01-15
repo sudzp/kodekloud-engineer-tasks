@@ -1,0 +1,12 @@
+---
+- name: 'Ansible Archive Module'
+  hosts: all
+  become: true
+  tasks:
+  
+  - name: 'Create an archive of given directory and copy to /opy/security/ directory'
+    archive:
+      path: /usr/src/security/
+      dest: /opt/security/cluster.tar.gz
+      owner: "{{ ansible_user }}"
+      group: "{{ ansible_user }}"
