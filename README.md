@@ -6,6 +6,7 @@
 ## Kubernetes Tasks
 
 * [ReplicationController in Kubernetes](/kubernetes/replication-controller-in-kubernetes.yml)
+* [Deploy Apache Web Server on Kubernetes Cluster](/kubernetes/deploy-apache-web-server-on-kubernetes.yaml)
 
 ## Docker Tasks
 * [Create Docker Network](/docker/docker-commands.md)
