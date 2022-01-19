@@ -1,0 +1,55 @@
+# Create namespace if not exist
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+    name: httpd-namespace-xfusion
+spec: {}
+status: {}
+
+# Create Deployment for apache web server (httpd) with 2 replicas
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: httpd-deployment-xfusion
+  name: httpd-deployment-xfusion
+  namespace: httpd-namespace-xfusion
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: httpd-deployment-xfusion
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: httpd-deployment-xfusion
+    spec:
+      containers:
+      - image: httpd:latest
+        name: httpd
+        resources: {}
+status: {}
+
+# Create a service and expose the deployment on specified nodePort 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: httpd-deployment-xfusion
+  name: httpd-service-xfusion
+  namespace: httpd-namespace-xfusion
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+    nodePort: 30004
+  selector:
+    app: httpd-deployment-xfusion
+  type: NodePort
+status:
+  loadBalancer: {}
