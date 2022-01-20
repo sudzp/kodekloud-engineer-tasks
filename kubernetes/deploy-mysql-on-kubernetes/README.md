@@ -1,5 +1,5 @@
 
-# How to Deploy Mysql on Kubernetes
+# How to Deploy MySQL on Kubernetes
 
 ### Follow the below steps:
 
