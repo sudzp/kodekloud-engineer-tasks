@@ -5,6 +5,7 @@
 
 ## Kubernetes Tasks
 
+* [Deploy MySQL on Kubernetes](/kubernetes/deploy-mysql-on-kubernetes)
 * [ReplicationController in Kubernetes](/kubernetes/replication-controller-in-kubernetes.yml)
 * [Deploy Apache Web Server on Kubernetes Cluster](/kubernetes/deploy-apache-web-server-on-kubernetes.yaml)
 
