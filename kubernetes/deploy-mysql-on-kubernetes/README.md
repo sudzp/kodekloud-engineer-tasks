@@ -4,8 +4,8 @@
 ### Follow the below steps:
 
 
-- [x] Create Persistent Volume
-- [x] Create Persistent Volume Claim
-- [x] Create all the required Secrets
-- [x] Create Deployment
-- [x] Create Service to connect to mysql database
+- [x] 1. Create Persistent Volume
+- [x] 2. Create Persistent Volume Claim
+- [x] 3. Create all the required Secrets
+- [x] 4. Create Deployment
+- [x] 5. Create Service to connect to mysql database
