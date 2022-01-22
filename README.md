@@ -23,3 +23,4 @@
 ## Puppet Tasks
 
 * [Puppet String Manipulation](puppet/puppet-string-manipulation.pp)
+* [Setup Puppet Certs](puppet/setup-puppet-certs.md)
