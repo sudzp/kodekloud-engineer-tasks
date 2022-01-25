@@ -24,3 +24,4 @@
 
 * [Puppet String Manipulation](puppet/puppet-string-manipulation.pp)
 * [Setup Puppet Certs](puppet/setup-puppet-certs.md)
+* [Puppet Setup NTP Server](/puppet/puppet-setup-NTP-server.pp)
