@@ -1,0 +1,28 @@
+---
+- name: Ansible Facts Gathering
+  hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+     - name: Create file using blockinfile in all nodes
+       blockinfile:
+          create: yes
+          path: /root/facts.txt
+          block: |
+            Ansible managed node IP is {{ansible_default_ipv4.address}}
+
+     - name: Install httpd server
+       package:
+         name: httpd
+         state: present
+
+     - name: Copy file 
+       copy:
+        src: /root/facts.txt
+        dest: /var/www/html/index.html
+        remote_src: yes
+
+     - name: Start the service
+       service:
+         name: httpd
+         state: started
