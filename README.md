@@ -19,6 +19,7 @@
 * [Ansible Lineinfile Module](ansible/playbooks/ansible-lineinfile-module.yml)
 * [Ansible Create Users and Groups](/ansible/playbooks/create-users-and-groups.yml)
 * [Ansible Archive Module](/ansible/playbooks/ansible-archive-module.yml)
+* [Ansible Facts Gathering](/ansible/playbooks/Ansible-Facts-Gathering.yml)
 
 
 ## Puppet Tasks
