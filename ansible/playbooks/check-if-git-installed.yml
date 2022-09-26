@@ -1,0 +1,17 @@
+- name: 'Git installed or not'
+  hosts: web2
+  tasks:
+
+    - name: 'Check git version'
+      shell: git --version
+      register: gitversion
+      ignore_errors: true
+
+    - debug:
+       var: gitversion
+   
+    - shell: echo 'Oops, git is missing' > /tmp/is_git_installed.txt
+      when: gitversion.rc != 0
+
+    - shell: git --version > /tmp/is_git_installed.txt
+      when: gitversion.rc == 0
